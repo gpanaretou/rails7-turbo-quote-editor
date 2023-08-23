@@ -10,7 +10,11 @@
                     data: { turbo_frame: dom_id(Quote.new) } %>
     </div>
 
-    <%= turbo_frame_tag Quote.new %>
+    <%= turbo_frame_tag Quote.new do %>
+        <% if @quotes.none? %>
+            <%= render "quotes/empty_state" %>
+        <% end %>
+    <% end %>
 
     <%= turbo_frame_tag "quotes" do %>
        <%= render @quotes %>
