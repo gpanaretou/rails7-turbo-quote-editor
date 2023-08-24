@@ -1,6 +1,6 @@
-<div class="line-item">
+<%= turbo_frame_tag line_item do %>
+    <div class="line-item">
 
-    <%= turbo_frame_tag line_item do %>
         <div class="line-item__name">
             <%= line_item.name %>
             <div class="line-item__description">
@@ -33,7 +33,6 @@
                         data: { turbo_frame: "_top" },
                         class: "btn btn--light" %>
         </div>
-    <% end %>
 
-
-</div>
+    </div>
+<% end %>
