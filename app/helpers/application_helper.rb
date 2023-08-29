@@ -16,4 +16,13 @@ module ApplicationHelper
         args.map { |arg| arg.respond_to?(:to_key) ? dom_id(arg) : arg }.join("_")
     end
 
+    def generate_token_with_prefix( string )
+        loop do
+          token = SecureRandom.hex(10)
+      
+          # Assuming AC is the string you would like to prefix
+          break "#{string}#{token}"
+        end
+    end
+
 end

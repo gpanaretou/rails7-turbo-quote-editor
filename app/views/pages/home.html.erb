@@ -6,5 +6,7 @@
         <%= link_to "View quotes", quotes_path, class: "btn btn--dark" %>
     <% else %>
         <%= link_to "Sign in", new_user_session_path, class: "btn btn--dark" %>
+        <%= link_to "Continue as Guest", user_session_path, data: { turbo_method: :post }, class: "btn btn--light" %>
+
     <% end %>
 </main>
